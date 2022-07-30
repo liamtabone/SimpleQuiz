@@ -6,7 +6,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	protoc "https://github.com/liamtabone/SimpleQuiz/proto"
+
+	//protoc "https://github.com/liamtabone/SimpleQuiz/proto"
 
 	//simpleQuiz "SimpleQuiz.pb.go"
 	"github.com/spf13/cobra"
@@ -51,10 +52,10 @@ func main() {
 		log.Fatalf("Failed to listen to port 9000: %v", err)
 	}
 
-	s := protoc.Server{}
+	//s := protoc.Server{}
 	grpcServer := grpc.NewServer()
 
-	protoc.RegisterSimpleQuizService(grpcServer, &s)
+	//protoc.RegisterSimpleQuizService(grpcServer, &s)
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatal("Hello")
